@@ -16,3 +16,20 @@ LanguagePack::Instrument.trace 'compile', 'app.compile' do
     end
   end
 end
+
+require 'pty'
+cmd = '/app/bin/qrsync /app/config/qiniu.json'
+begin
+  PTY.spawn( cmd ) do |stdin, stdout, pid|
+    puts "qrsync started with pid #{pid}"
+    begin
+      stdin.each { |line| print line }
+      stdout.each { |line| print line }
+    rescue Errno::EIO
+      puts "Errno:EIO error, but this probably just means " +
+            "that the process has finished giving output"
+    end
+  end
+rescue PTY::ChildExited
+  puts "The child process exited!"
+end
