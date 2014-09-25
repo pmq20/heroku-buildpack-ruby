@@ -17,7 +17,7 @@ LanguagePack::Instrument.trace 'compile', 'app.compile' do
   end
 end
 
-cmd = './bin/qrsync ./config/qiniu.json'
+cmd = './bin/qrsync ./config/qrsync.json'
 puts "Now execute #{cmd}"
 IO.popen(cmd).each do |line|
   puts line
