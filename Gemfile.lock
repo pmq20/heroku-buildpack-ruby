@@ -42,7 +42,7 @@ GEM
     parallel_tests (0.13.1)
       parallel
     progress (2.4.0)
-    rake (10.0.4)
+    rake (13.0.1)
     rdoc (4.1.1)
       json (~> 1.4)
     repl_runner (0.0.3)
@@ -76,7 +76,10 @@ DEPENDENCIES
   heroku_hatchet
   netrc
   parallel_tests
-  rake
+  rake (>= 12.3.3)
   rspec-core
   rspec-expectations
   rspec-retry
+
+BUNDLED WITH
+   1.17.3
