@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 group :development, :test do
-  gem "heroku_hatchet"
+  gem "heroku_hatchet", ">= 1.3.4"
   gem "rspec-core"
   gem "rspec-expectations"
   gem "excon"
